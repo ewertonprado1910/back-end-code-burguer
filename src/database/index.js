@@ -15,7 +15,7 @@ class Database {
     }
 
     init() {
-        this.connection = new Sequelize(ConfigDatabase)
+        this.connection = new Sequelize("postgresql://postgres:ibHsXczKstXQDkNZnIDJIUxcaPoNrkdO@viaduct.proxy.rlwy.net:19794/railway")
         models
             .map(model => model.init(this.connection))
             .map(model => model.associate && model.associate(this.connection.models))
@@ -24,7 +24,7 @@ class Database {
 
     mongo() {
         this.mongoConnection = mongoose.connect
-            ("mongodb://localhost:27017/devburguer")
+            ("mongodb://mongo:EKPYjPTZXKYopLCHBmoPXzIdgQaIBaeA@roundhouse.proxy.rlwy.net:38736")
 
     }
 
