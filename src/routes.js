@@ -13,7 +13,7 @@ import OrderController from "./app/controllers/OrderController";
 
 const routes = new Router()
 
-routes.get("/", (req, res) => {
+routes.get('/', (req, res) => {
     return res.json({ message: "Hello api"})
 })
 
