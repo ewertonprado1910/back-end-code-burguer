@@ -6,14 +6,5 @@ module.exports = {
         underscored: "true",
         underscoredAll: "true"
     },
-
-
 }
 
-/*
-  host: "localhost",
-    username: "postgres",
-    password: "postgress",
-    database: "project-doker-burguer",
-
-*/

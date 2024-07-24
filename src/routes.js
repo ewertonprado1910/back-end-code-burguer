@@ -12,6 +12,11 @@ import authMiddlewares from "./app/middlewares/auth"
 import OrderController from "./app/controllers/OrderController";
 
 const routes = new Router()
+
+routes.get("/", (req, res) => {
+    return res.json({ message: "Hello api"})
+})
+
 const upload = multer(multerConfig)
 
 routes.post('/users', UserController.store)
