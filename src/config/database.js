@@ -1,5 +1,4 @@
 module.exports = {
-    host: "localhost",
     dialect: "postgres",
     url: "postgresql://postgres:ibHsXczKstXQDkNZnIDJIUxcaPoNrkdO@viaduct.proxy.rlwy.net:19794/railway",
     define: {
@@ -15,7 +14,7 @@ const sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
   dialect: 'mysql'
 });
-
+/*
 async function connectToDatabase() {
   try {
     await sequelize.authenticate();
@@ -40,3 +39,4 @@ connectToDatabase()
     console.error('Database connection failed:', err);
   });
 
+*/
