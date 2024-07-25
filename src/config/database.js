@@ -8,15 +8,14 @@ module.exports = {
         underscoredAll: "true"
     },
 }
+
 const { Sequelize, sequelizeErrors } = require('sequelize');
 
-// Your database connection setup
 const sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
   dialect: 'mysql'
 });
 
-// Function to handle the connection
 async function connectToDatabase() {
   try {
     await sequelize.authenticate();
@@ -24,16 +23,15 @@ async function connectToDatabase() {
   } catch (err) {
     if (err instanceof sequelizeErrors.ConnectionError) {
       console.error('Unable to connect to the database:', err);
-      // Handle the error appropriately
+     
       return Promise.reject(new sequelizeErrors.ConnectionError(err));
     } else {
-      // Handle other types of errors
+      
       return Promise.reject(err);
     }
   }
 }
 
-// Call the connection function
 connectToDatabase()
   .then(() => {
     console.log('Database connection successful');
