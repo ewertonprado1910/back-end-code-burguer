@@ -1,5 +1,13 @@
 module.exports = {
-        sequelize: new Sequelize('database', 'username', 'password', {
+    dialect: "postgres",
+    url: "postgresql://postgres:ibHsXczKstXQDkNZnIDJIUxcaPoNrkdO@viaduct.proxy.rlwy.net:19794/railway",
+    define: {
+        timestamps: "true",
+        underscored: "true",
+        underscoredAll: "true"
+    },
+
+    sequelize: new Sequelize('database', 'username', 'password', {
         host: 'localhost',
         dialect: 'postgres',
         port: 5432,
@@ -13,13 +21,5 @@ module.exports = {
           connectTimeout: 60000
         }
       }),
-      
-    dialect: "postgres",
-    url: "postgresql://postgres:ibHsXczKstXQDkNZnIDJIUxcaPoNrkdO@viaduct.proxy.rlwy.net:19794/railway",
-    define: {
-        timestamps: "true",
-        underscored: "true",
-        underscoredAll: "true"
-    },
 }
 
