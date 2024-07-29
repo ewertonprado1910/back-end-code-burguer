@@ -1,4 +1,4 @@
-import { Sequelize, host, port, logging } from "sequelize";
+import { Sequelize} from "sequelize";
 import mongoose from "mongoose";
 
 import User from "../app/models/User";
