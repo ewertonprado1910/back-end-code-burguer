@@ -1,9 +1,10 @@
-import { Sequelize } from "sequelize";
+import { Sequelize, host, port, logging } from "sequelize";
 import mongoose from "mongoose";
 
 import User from "../app/models/User";
 import Product from "../app/models/Products"
 import Category from "../app/models/Caregory";
+import configDatabase from "../config/database"
 
 const models = [User, Product, Category]
 
@@ -14,7 +15,7 @@ class Database {
     }
 
     init() {
-        this.connection = new Sequelize("postgresql://postgres:ibHsXczKstXQDkNZnIDJIUxcaPoNrkdO@viaduct.proxy.rlwy.net:19794/railway")
+        this.connection = new Sequelize(configDatabase)
         models
             .map(model => model.init(this.connection))
             .map(model => model.associate && model.associate(this.connection.models))
